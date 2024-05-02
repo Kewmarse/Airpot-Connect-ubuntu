@@ -1,0 +1,42 @@
+sudo nano /etc/bluetooth/main.conf
+
+{
+# How long to stay in discoverable mode before going back to non-discoverable
+# The value is in seconds. Default is 180, i.e. 3 minutes.
+# 0 = disable timer, i.e. stay discoverable forever
+DiscoverableTimeout =120      //ici
+}
+
+
+{# Restricts all controllers to the specified transport. Default value
+# is "dual", i.e. both BR/EDR and LE enabled (when supported by the HW).
+# Possible values: "dual", "bredr", "le"
+#ControllerMode = dual
+ControllerMode=bredr     //ici
+}
+
+ctrl+x =save =Oui 
+
+
+
+
+
+
+
+sudo service bluetooth restart
+
+
+
+
+service bluetooth stat
+
+
+
+pulseaudio -k
+
+
+
+
+
+start-pulseaudio-x11 
+
